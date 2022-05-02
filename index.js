@@ -1,4 +1,4 @@
-const reconsileOrder = (array, object) => {
+const reconcileOrder = (array, object) => {
   let existingBook = [...array]
   let incomingOrder = { ...object }
   let fulfilledArray = []
@@ -17,7 +17,7 @@ const reconsileOrder = (array, object) => {
       if (fulfilledOrders.quantity > 0) {
         fulfilledArray.push(fulfilledOrders)
       } else {
-        //does nothing
+        // does nothing
 
       }
     } else {
@@ -30,7 +30,7 @@ const reconsileOrder = (array, object) => {
   }
 
 
- 
+
 
   return [...nonFulfilledArray, ...fulfilledArray]
 }
@@ -51,9 +51,8 @@ const fulfillOrders = (existingBook, incomingOrder) => {
   existingBook.quantity -= orderQuantity
   incomingOrder.quantity -= orderQuantity
 
-return existingBook
-
+  return existingBook
 }
 
 
-module.exports = reconsileOrder
+module.exports = reconcileOrder
